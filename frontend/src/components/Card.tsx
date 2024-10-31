@@ -92,7 +92,7 @@ export const PostCard = ({
         </Card.Subtitle>
         <Card.Text>{description}</Card.Text>
         <Card.Text>
-          <strong>Price: ${price.toFixed(2)}</strong>
+          <strong>Price: {price} eur.</strong>
         </Card.Text>
         <div className="mt-3">
           {userInfo.role === "user" ? (

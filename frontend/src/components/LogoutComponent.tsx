@@ -32,11 +32,11 @@ export const LogoutComponent = ({ visibility = true }) => {
             onClick={handleLogout}
             disabled={isLoading}
           >
-            {isLoading ? "Logging out..." : "Logout"}
+            {isLoading ? "Atsijungiama..." : "Atsijungti"}
           </button>
           {isError && (
             <div className="text-danger mt-2">
-              Logout failed: {(error as any).data.message}
+              Nepavyko atsijungti: {(error as any).data.message}
             </div>
           )}
         </div>

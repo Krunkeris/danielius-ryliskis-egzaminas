@@ -3,9 +3,11 @@ import { useDispatch } from "react-redux";
 import { AppDispatch } from "../store/store";
 import { useLogoutMutation } from "../api/authApi";
 import { clearUserInfo } from "../features/userInfoSlice";
+import { useNavigate } from "react-router-dom";
 
 export const BlockedPage = () => {
   const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
 
   const [logout] = useLogoutMutation();
 
@@ -15,6 +17,7 @@ export const BlockedPage = () => {
 
       localStorage.clear();
       dispatch(clearUserInfo());
+      navigate("/login");
       console.log(response);
     } catch (error) {
       console.error(error);

@@ -27,7 +27,7 @@ export const Header = ({
   const { data: categories, error, isLoading } = useGetAllCategoriesQuery();
 
   if (isLoading) return <Spinner animation="border" variant="primary" />;
-  if (error) return <div>Error loading categories.</div>;
+  if (error) return <div>Nepavyko uzkrauti kategoriju</div>;
 
   return (
     <Navbar expand="md" className="bg-body-tertiary mb-3 sticky-top">
@@ -61,7 +61,7 @@ export const Header = ({
                   onChange={(e) => setSelectedCategory(e.target.value)}
                   className="me-2 categories-width"
                 >
-                  <option value="">All Categories</option>
+                  <option value="">Kategorijos</option>
                   {categories?.map((category) => (
                     <option key={category._id} value={category.name}>
                       {category.name}
@@ -71,7 +71,7 @@ export const Header = ({
 
                 <Form.Control
                   type="search"
-                  placeholder="Search"
+                  placeholder="Ieskoti..."
                   className="me-2"
                   aria-label="Search"
                   value={searchQuery}
@@ -87,19 +87,19 @@ export const Header = ({
                   align="end"
                 >
                   <NavDropdown.Item as={Link} to="/acceptedPosts">
-                    All posts
+                    Skelbimai
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item as={Link} to="/createPost">
-                    Create post
+                    Sukurti skelbima
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item as={Link} to="/likedPosts">
-                    Liked posts
+                    Patike skelbimai
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item as={Link} to="/myPosts">
-                    My posts
+                    Mano skelbimai
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item>
@@ -114,19 +114,19 @@ export const Header = ({
                   align="end"
                 >
                   <NavDropdown.Item as={Link} to="/acceptedPosts">
-                    All posts
+                    Skelbimai
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item as={Link} to="/createCategories">
-                    Manage categories
+                    Valdyti kategorijas
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item as={Link} to="/posts">
-                    Manage posts
+                    Valdyti skelbimus
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item as={Link} to="/users">
-                    Manage users
+                    Valdyti vartotojus
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item>
