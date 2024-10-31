@@ -66,51 +66,9 @@ export const CommentsPage = () => {
     isLoading: usersIsLoading,
   } = useGetAllUsersQuery();
 
-  const [
-    createComment,
-    {
-      isError: createCommentIsError,
-      error: createCommentError,
-      isLoading: createCommentIsLoading,
-    },
-  ] = useCreateCommentMutation();
-  const [
-    deleteComment,
-    {
-      isError: deleteCommentIsError,
-      error: deleteCommentError,
-      isLoading: deleteCommentIsLoading,
-    },
-  ] = useDeleteCommentMutation();
-  const [
-    updateComment,
-    {
-      isError: updateCommentIsError,
-      error: updateCommentError,
-      isLoading: updateCommentIsLoading,
-    },
-  ] = useUpdateCommentMutation();
-
-  if (
-    commentsIsLoading ||
-    postsIsLoading ||
-    usersIsLoading ||
-    createCommentIsLoading ||
-    deleteCommentIsLoading ||
-    updateCommentIsLoading
-  ) {
-    return <p>Loading...</p>;
-  }
-
-  if (commentsIsError) return <p>{(commentsError as any).data.message}</p>;
-  if (postsIsError) return <p>{(postsError as any).data.message}</p>;
-  if (usersIsError) return <p>{(usersError as any).data.message}</p>;
-  if (createCommentIsError)
-    return <p>{(createCommentError as any).data.message}</p>;
-  if (deleteCommentIsError)
-    return <p>{(deleteCommentError as any).data.message}</p>;
-  if (updateCommentIsError)
-    return <p>{(updateCommentError as any).data.message}</p>;
+  const [createComment] = useCreateCommentMutation();
+  const [deleteComment] = useDeleteCommentMutation();
+  const [updateComment] = useUpdateCommentMutation();
 
   const commentsForPost = comments?.filter((comment) => comment.postsId === id);
   const post = posts?.find((post) => post._id === id);
