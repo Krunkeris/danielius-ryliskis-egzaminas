@@ -88,26 +88,26 @@ export const PostCard = ({
       <Card.Body>
         <Card.Title>{name.slice(0, 12)}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">
-          Category: {category} | Status: {status}
+          Kategorija: {category} | Statusas: {status}
         </Card.Subtitle>
         <Card.Text>{description}</Card.Text>
         <Card.Text>
-          <strong>Price: {price} eur.</strong>
+          <strong>Kaina: {price} eur.</strong>
         </Card.Text>
         <div className="mt-3">
-          {userInfo.role === "user" ? (
+          {userInfo.role === "user" || userInfo.role === "admin" ? (
             <>
               <Button
                 variant="dark"
                 className="me-2"
                 onClick={() => handleLike(_id)}
               >
-                Like {likes.length}
+                <i className="bi bi-hand-thumbs-up"></i> {likes.length}
               </Button>
               <Link to={`/comments/${_id}`}>
                 {showCommentButton === true ? (
                   <Button variant="dark" className="me-2">
-                    Comment
+                    <i className="bi bi-chat"></i>
                   </Button>
                 ) : (
                   <></>
@@ -125,11 +125,11 @@ export const PostCard = ({
                   to={`/updatePost/${_id}`}
                   style={{ textDecoration: "none", color: "white" }}
                 >
-                  Update
+                  <i className="bi bi-pencil"></i>
                 </Link>
               </Button>
               <Button variant="dark" onClick={() => handleDelete(_id)}>
-                Delete
+                <i className="bi bi-trash3"></i>
               </Button>
             </>
           ) : (
@@ -138,11 +138,11 @@ export const PostCard = ({
           {userInfo.role === "admin" ? (
             status === "pending" ? (
               <Button variant="dark" onClick={() => handleAccept(_id)}>
-                Accept
+                Patvirtinti
               </Button>
             ) : (
               <Button variant="dark" onClick={() => handlePending(_id)}>
-                block
+                Blokuoti
               </Button>
             )
           ) : (

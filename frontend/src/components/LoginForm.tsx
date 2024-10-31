@@ -43,7 +43,7 @@ export const LoginForm = () => {
       style={{ width: "400px" }}
       onSubmit={handleSubmit}
     >
-      <h2 className="text-center mb-4">Login</h2>
+      <h2 className="text-center mb-4">Prisijungimas</h2>
 
       <div className="mb-3">
         <label htmlFor="email" className="form-label" hidden>
@@ -54,7 +54,7 @@ export const LoginForm = () => {
           name="email"
           className="form-control"
           id="email"
-          placeholder="Enter your email"
+          placeholder="Iveskite elektronini pasta..."
           required
           value={loginInputData.email}
           onChange={handleChange}
@@ -69,14 +69,14 @@ export const LoginForm = () => {
           name="password"
           className="form-control"
           id="password"
-          placeholder="Enter your password"
+          placeholder="Iveskite slaptazodi"
           required
           value={loginInputData.password}
           onChange={handleChange}
         />
       </div>
       <button type="submit" className="btn btn-primary w-100">
-        {isLoading ? "Registering..." : "Submit"}
+        {isLoading ? "Prisijungiama..." : "Prisijungti"}
       </button>
       {isError && (
         <p className="text-danger mt-2">
@@ -84,7 +84,8 @@ export const LoginForm = () => {
         </p>
       )}
       <div className="mt-3">
-        Dont have an account yet? <Link to="/register">Register here</Link>
+        Dar neturite paskyros?{" "}
+        <Link to="/register">Prisiregistruokite cia</Link>
       </div>
     </form>
   );

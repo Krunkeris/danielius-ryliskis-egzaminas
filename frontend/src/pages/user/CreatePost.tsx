@@ -18,8 +18,8 @@ export const CreatePost = () => {
 
   const navigate = useNavigate();
 
-  if (categoriesLoading) return <div>Loading categories...</div>;
-  if (categoriesError) return <div>Error loading categories.</div>;
+  if (categoriesLoading) return <div>Kraunamos kategorijos...</div>;
+  if (categoriesError) return <div>Nepavyko uzkrauti kategoriju.</div>;
 
   const userInfo = useSelector((state: RootState) => state.userInfo);
 
@@ -59,7 +59,7 @@ export const CreatePost = () => {
   };
 
   if (createPostLoading) {
-    return <p>Loading...</p>;
+    return <p>kraunama...</p>;
   }
 
   return (
@@ -68,14 +68,14 @@ export const CreatePost = () => {
         <Header />
       </div>
       <Container>
-        <h2>Add a New Product</h2>
+        <h2>Prideti nauja skelbima</h2>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formName">
-            <Form.Label>Name</Form.Label>
+            <Form.Label>Pavadinimas</Form.Label>
             <Form.Control
               name="name"
               type="text"
-              placeholder="Enter product name"
+              placeholder="Iveskite produkto pavadinima"
               value={postInputData.name}
               onChange={handleChange}
               required
@@ -83,14 +83,14 @@ export const CreatePost = () => {
           </Form.Group>
 
           <Form.Group controlId="formCategory">
-            <Form.Label>Category</Form.Label>
+            <Form.Label>Kategorijos</Form.Label>
             <Form.Control
               name="category"
               as="select"
               value={postInputData.category}
               onChange={handleChange}
             >
-              <option value="">All Categories</option>
+              <option value="">Visos kategorijos</option>
               {categories?.map((category) => (
                 <option key={category._id} value={category.name}>
                   {category.name}
@@ -100,12 +100,12 @@ export const CreatePost = () => {
           </Form.Group>
 
           <Form.Group controlId="formDescription">
-            <Form.Label>Description</Form.Label>
+            <Form.Label>Aprasymas</Form.Label>
             <Form.Control
               name="description"
               as="textarea"
               rows={3}
-              placeholder="Enter product description"
+              placeholder="Iveskite produkto aprasyma"
               value={postInputData.description}
               onChange={handleChange}
               required
@@ -113,7 +113,7 @@ export const CreatePost = () => {
           </Form.Group>
 
           <Form.Group controlId="formPrice">
-            <Form.Label>Price</Form.Label>
+            <Form.Label>Kaina</Form.Label>
             <Form.Control
               type="number"
               placeholder="Enter product price"
@@ -125,19 +125,19 @@ export const CreatePost = () => {
           </Form.Group>
 
           <Form.Group controlId="formImageUrl">
-            <Form.Label>Image URL</Form.Label>
+            <Form.Label>Paveikslelis</Form.Label>
             <Form.Control
               type="url"
-              placeholder="Enter image URL (HTTPS)"
+              placeholder="Iveskite paveikslelio URL (HTTPS)"
               value={postInputData.imageUrl}
               onChange={handleChange}
               required
               name="imageUrl"
             />
           </Form.Group>
-
-          <Button variant="primary" type="submit">
-            Submit
+          <br />
+          <Button variant="dark" type="submit">
+            Ikelti
           </Button>
           {isError && (
             <p className="text-danger mt-2">

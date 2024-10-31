@@ -1,0 +1,23 @@
+Refleksija
+Šio projekto atlikimas suteikė man galimybę praktiškai pritaikyti teorines žinias apie informacinių sistemų projektavimą ir kūrimą, ypač žiniatinklio programų kūrimą. 
+
+Išmoktos pamokos:
+Išmokau, kaip svarbu numatyti projekto struktūrą, kad visos funkcijos veiktų sklandžiai ir būtų lengvai valdomos.
+
+Duomenų bazės projektavimas:
+Svarbu buvo ne tik sukurti ryšius tarp lentelių, bet ir užtikrinti, kad duomenys būtų validuojami. 
+Šis aspektas buvo ypač naudingas, nes leido suprasti, kaip gerai suprojektuota duomenų bazė gali pagerinti programos efektyvumą.
+
+Programavimo įgūdžiai: 
+Naudojant Node.js administracinei daliai ir HTML, CSS bei React viešajai daliai, turėjau galimybę patobulinti savo programavimo įgūdžius. 
+Naudojau kurti REST API, kas padėjo sukurti sklandžią komunikaciją tarp administracinės ir viešosios srities.
+
+Vartotojo sąsaja: Supratau, kaip svarbu sukurti patogią ir intuityvią vartotojo sąsają. 
+Naudodamas Bootstrap, sugebėjau pagreitinti UI kūrimo procesą, tačiau patyriau iššūkių, kai reikėjo pritaikyti dizainą mobiliesiems įrenginiams. 
+
+Iššūkiai
+Vienas didžiausių iššūkių buvo užtikrinti, kad visi komponentai veiktų kartu. 
+Dėl skirtingų technologijų ir jų sąveikos kartais susidurdavau su klaidomis, kurias buvo sunku identifikuoti. 
+Tai išmokė mane kantrybės ir nuoseklumo, kai reikia išspręsti problemas.
+
+Taip pat pastebėjau, kad ne visuomet buvo lengva integruoti vartotojų autentifikavimą ir autorizavimą. 

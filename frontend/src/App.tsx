@@ -14,7 +14,6 @@ import { MyPosts } from "./pages/user/MyPosts";
 import { UpdatePost } from "./pages/user/UpdatePost";
 import { CommentsPage } from "./pages/CommentsPage";
 import { CreateCategories } from "./pages/admin/CreateCategories";
-import { ListCategories } from "./pages/admin/ListCategories";
 import { Posts } from "./pages/admin/Posts";
 import { Users } from "./pages/admin/Users";
 import { GetUserInfo } from "./components/GetUserInfo";

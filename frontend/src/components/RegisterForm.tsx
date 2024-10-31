@@ -45,7 +45,7 @@ export const RegisterForm = () => {
       style={{ width: "400px" }}
       onSubmit={handleSubmit}
     >
-      <h2 className="text-center mb-4">Register</h2>
+      <h2 className="text-center mb-4">Registracija</h2>
       <div className="mb-3">
         <label htmlFor="username" className="form-label" hidden>
           Username
@@ -55,7 +55,7 @@ export const RegisterForm = () => {
           name="username"
           className="form-control"
           id="username"
-          placeholder="Enter your username"
+          placeholder="Iveskite savo slapyvardi"
           required
           value={registerInputData.username}
           onChange={handleChange}
@@ -70,7 +70,7 @@ export const RegisterForm = () => {
           name="email"
           className="form-control"
           id="email"
-          placeholder="Enter your email"
+          placeholder="Iveskite savo elektronini pasta"
           required
           value={registerInputData.email}
           onChange={handleChange}
@@ -85,7 +85,7 @@ export const RegisterForm = () => {
           name="password"
           className="form-control"
           id="password"
-          placeholder="Enter your password"
+          placeholder="Iveskite savo slaptazodi"
           required
           value={registerInputData.password}
           onChange={handleChange}
@@ -100,7 +100,7 @@ export const RegisterForm = () => {
         </p>
       )}
       <div className="mt-3">
-        Already have an account? <Link to="/login">Login here</Link>
+        Jau turite paskyra? <Link to="/login">Prisijunkite cia</Link>
       </div>
     </form>
   );

@@ -32,12 +32,10 @@ export const CommentsPage = () => {
   const [editCommentId, setEditCommentId] = useState<string | null>(null);
   const [commentUpdateInputData, setCommentUpdateInputData] = useState("");
 
-  // Fetch user info when the component mounts
   useEffect(() => {
     dispatch(getUserInfo());
   }, [dispatch]);
 
-  // Update comment input data when userInfo changes
   useEffect(() => {
     if (userInfo._id) {
       setCommentInputData((prev) => ({ ...prev, authorId: userInfo._id }));
@@ -48,7 +46,6 @@ export const CommentsPage = () => {
     setAddCommentToggle((prev) => !prev);
   };
 
-  // Fetch comments, posts, and users
   const {
     data: comments,
     isError: commentsIsError,
@@ -94,7 +91,6 @@ export const CommentsPage = () => {
     },
   ] = useUpdateCommentMutation();
 
-  // Loading states
   if (
     commentsIsLoading ||
     postsIsLoading ||
@@ -106,7 +102,6 @@ export const CommentsPage = () => {
     return <p>Loading...</p>;
   }
 
-  // Error handling
   if (commentsIsError) return <p>{(commentsError as any).data.message}</p>;
   if (postsIsError) return <p>{(postsError as any).data.message}</p>;
   if (usersIsError) return <p>{(usersError as any).data.message}</p>;
@@ -120,7 +115,7 @@ export const CommentsPage = () => {
   const commentsForPost = comments?.filter((comment) => comment.postsId === id);
   const post = posts?.find((post) => post._id === id);
 
-  if (!post) return <p>No post found.</p>;
+  if (!post) return <p>Nerasta skelbimu.</p>;
 
   const handleCreateComment = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -196,7 +191,7 @@ export const CommentsPage = () => {
         <div className="d-flex flex-column justify-content-center align-items-center">
           {!addCommentToggle ? (
             <button className="btn btn-dark" onClick={handleCommentToggle}>
-              Add a comment
+              Prideti komentara
             </button>
           ) : (
             <form onSubmit={handleCreateComment}>
@@ -244,7 +239,7 @@ export const CommentsPage = () => {
                             className="btn btn-dark"
                             onClick={() => handleDeleteComment(comment._id)}
                           >
-                            delete
+                            <i className="bi bi-trash3"></i>
                           </button>
                           {editCommentId === comment._id ? (
                             <form onSubmit={handleUpdateCommentSubmit}>
@@ -260,14 +255,14 @@ export const CommentsPage = () => {
                               </div>
                               <div className="mb-3">
                                 <button className="btn btn-dark" type="submit">
-                                  Update
+                                  <i className="bi bi-check-lg"></i>
                                 </button>
                                 <button
                                   type="button"
                                   className="btn btn-dark"
                                   onClick={() => setEditCommentId(null)}
                                 >
-                                  Cancel
+                                  <i className="bi bi-x"></i>
                                 </button>
                               </div>
                             </form>
@@ -276,7 +271,7 @@ export const CommentsPage = () => {
                               className="btn btn-dark"
                               onClick={() => handleEditComment(comment)}
                             >
-                              update
+                              <i className="bi bi-pencil"></i>
                             </button>
                           )}
                         </>

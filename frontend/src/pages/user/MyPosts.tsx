@@ -11,17 +11,14 @@ export const MyPosts = () => {
   const userInfo = useSelector((state: RootState) => state.userInfo);
   const { data: posts, error, isLoading } = useGetAllPostsQuery();
 
-  // State for the search query and selected category
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {(error as any).data.message}</div>;
 
-  // Filter posts based on the search query
   const myPosts = posts?.filter((post) => post.userId === userInfo._id);
 
-  // Filter posts based on the search query and selected category
   const filteredPosts = myPosts?.filter((post) => {
     const matchesSearch = post.name
       .toLowerCase()
@@ -35,7 +32,6 @@ export const MyPosts = () => {
 
   return (
     <div>
-      {/* Pass searchQuery and setSearchQuery to Header */}
       <Header
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}

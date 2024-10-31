@@ -63,7 +63,7 @@ export const UpdatePost = () => {
   };
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p>Kraunama...</p>;
   }
 
   console.log(updatePostInputData);
@@ -74,14 +74,14 @@ export const UpdatePost = () => {
         <Header />
       </div>
       <Container>
-        <h2>Update post</h2>
+        <h2>Atnaujinti skelbima</h2>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formName">
-            <Form.Label>Name</Form.Label>
+            <Form.Label>Pavadinimas</Form.Label>
             <Form.Control
               name="name"
               type="text"
-              placeholder="Enter product name"
+              placeholder="Iveskite skelbimo pavadinima"
               value={updatePostInputData.name}
               onChange={handleChange}
               required
@@ -89,7 +89,7 @@ export const UpdatePost = () => {
           </Form.Group>
 
           <Form.Group controlId="formCategory">
-            <Form.Label>Category</Form.Label>
+            <Form.Label>Kategorijos</Form.Label>
             <Form.Control
               name="category"
               as="select"
@@ -105,12 +105,12 @@ export const UpdatePost = () => {
           </Form.Group>
 
           <Form.Group controlId="formDescription">
-            <Form.Label>Description</Form.Label>
+            <Form.Label>Aprasymas</Form.Label>
             <Form.Control
               name="description"
               as="textarea"
               rows={3}
-              placeholder="Enter product description"
+              placeholder="Iveskite skelbimo aprasyma"
               value={updatePostInputData.description}
               onChange={handleChange}
               required
@@ -118,10 +118,10 @@ export const UpdatePost = () => {
           </Form.Group>
 
           <Form.Group controlId="formPrice">
-            <Form.Label>Price</Form.Label>
+            <Form.Label>Kaina</Form.Label>
             <Form.Control
               type="number"
-              placeholder="Enter product price"
+              placeholder="Iveskite skelbimo kaina"
               value={updatePostInputData.price}
               onChange={handleChange}
               required
@@ -130,19 +130,20 @@ export const UpdatePost = () => {
           </Form.Group>
 
           <Form.Group controlId="formImageUrl">
-            <Form.Label>Image URL</Form.Label>
+            <Form.Label>Paveikslelis</Form.Label>
             <Form.Control
               type="url"
-              placeholder="Enter image URL (HTTPS)"
+              placeholder="Iveskite paveikslelio URL (HTTPS)"
               value={updatePostInputData.imageUrl}
               onChange={handleChange}
               required
               name="imageUrl"
             />
           </Form.Group>
+          <br />
 
-          <Button variant="primary" type="submit">
-            Submit
+          <Button variant="dark" type="submit">
+            Atnaujinti
           </Button>
           {isError && (
             <p className="text-danger mt-2">
