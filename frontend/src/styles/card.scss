@@ -1,0 +1,31 @@
+.card-min-max-width {
+  min-width: 600px;
+  min-height: 500px;
+  max-width: 600px;
+}
+
+.row-responsive {
+  width: 100%;
+  justify-content: center;
+}
+
+.comment-section {
+  min-width: 600px;
+  max-width: 600px;
+}
+
+.img-style {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 300px;
+  min-height: 300px;
+}
+
+.comment-card-style {
+  width: 100%;
+}
+
+.categories-width {
+  max-width: 150px;
+}
